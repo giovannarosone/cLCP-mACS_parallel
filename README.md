@@ -18,7 +18,7 @@ cd cLCP-mACS_parallel
 ### Run
 
 ```sh
-./cLCP-mACS [-h] [-v] [-p] [-l] [-f input_format] [-Q amount] ref_seq target_seqs ref_color output
+./cLCP-mACS_parallel [-h] [-v] [-p] [-l] [-f input_format] [-Q amount] ref_seq target_seqs ref_color output
 ```
 
 ##### Input
