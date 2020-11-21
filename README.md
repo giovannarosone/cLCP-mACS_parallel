@@ -56,7 +56,7 @@ Here, our target collection is `3seq` corresponding to a set of 3 files:
 * `3seq.info`
 * `3seq.len`
 
-which are computed using the ??? (BCR_LCP_GSA?) tool on the `datasets/test-3seq/3seq.fasta` FASTA file.
+which are computed using the **??? (BCR_LCP_GSA?)** tool on the `datasets/test-3seq/3seq.fasta` FASTA file.
 
 The environment variable `OMP_NUM_THREADS` sets the number of parallel threads used for the computation. 
 
@@ -75,7 +75,7 @@ If `-f`is specified (as in our case), we end up with the following files:
 -rw-r--r--   1 user  staff     0B 21 Nov 18:06 3seq_thread_3.out.txt
 ```
 
-`3seq.acs` contains the ACS scores matrix (**details to add here**), whereas `3seq_thread_{j}.out.txt` depicts some time statistics for the j-th thread performing the D array computation (`generateSingleD( [i: sequence index])`) and the actual i-vs-all scores computation related to the i-th sequence.
+`3seq.acs` contains the ACS scores matrix (**details to add here**), whereas `3seq_thread_{j}.out.txt` depicts some time statistics for the j-th thread performing the D array computation and the actual i-vs-all scores computation related to the i-th sequence.
 
 If `-f` is omitted, then we also have:
 
