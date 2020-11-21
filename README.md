@@ -75,7 +75,7 @@ The option `-d` skip the previously described .d computation step: the program e
 
 The option `-Q amount` dictates the amount of RAM (in Bytes) available to accomodate partial cLCP page. `amount` has to be at least 2 x _m_, where _m_ is the number of sequences in target collection.
 
-The option `-I input_format` specifies the format of the input to cLCP-mACS. Currently, only `-I0` option is implemented (default) corresponding to the BCR file format as computed by <span style="color:red">*???*</span>
+The option `-I input_format` specifies the format of the input to cLCP-mACS. Currently, only `-I0` option is implemented (default) corresponding to the BCR file format as computed by **???**.
 
 
 #### Citation
@@ -93,7 +93,7 @@ If you use cLCP-mACS or cLCP-mACS_parallel you could cite the following paper:
     publisher = {Springer}
     }
     
-<span style="color:red">*Daniele: penso che dovremmo aggiungere la conferenza in cui è stato presentato il lavoro ed il PDF della presentazione.*</span>
+**Daniele: penso che dovremmo aggiungere la conferenza in cui è stato presentato il lavoro ed il PDF della presentazione.**
     
 ---
 1. <small id="f1"> Supported by the project Italian MIUR-SIR CMACBioSeq ("_Combinatorial methods for analysis and compression of biological sequences_")
