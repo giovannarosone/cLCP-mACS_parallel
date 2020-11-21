@@ -37,19 +37,61 @@ If everything works fine, you should find the `cLCP-mACS_parallel` binary into t
 
 ```sh
 export OMP_NUM_THREADS=4 
-./bin/cLCP-mACS_parallel [-d] [-E] [-f] [-Q BUFFER_SIZE] -I0 target_collection
+./bin/cLCP-mACS_parallel [-d] [-f] [-Q BUFFER_SIZE] -I0 target_collection
 ```
 
-##### Input
+#### Input
 
-`OMP_NUM_THREADS` sets the number of parallel threads used for the computation. 
-*TO DO*
+For example, let us compute ACS scores for a test set of 3 sequences found in `datasets/test-3seq`:
 
-##### Output
-*TO DO*
+```sh
+cd datasets/test-3seq
+export OMP_NUM_THREADS=4 
+../../bin/cLCP-mACS_parallel -f 3seq
+```
+
+Here, our target collection is `3seq` corresponding to a set of 3 files: 
+
+* `3seq.lcpDa`
+* `3seq.info`
+* `3seq.len`
+
+which are computed using the ??? (BCR_LCP_GSA?) tool on the `datasets/test-3seq/3seq.fasta` FASTA file.
+
+The environment variable `OMP_NUM_THREADS` sets the number of parallel threads used for the computation. 
+
+Finally, we specify the `-f` option for flushing intermediate computation files (recommended because they can grow large in proportion to the number and length of sequences within our target collection)-
 
 
-##### Options:
+#### Output
+
+If `-f`is specified (as in our case), we end up with the following files:
+
+```sh
+-rw-r--r--   1 user  staff    27B 21 Nov 18:06 3seq.acs
+-rw-r--r--   1 user  staff   189B 21 Nov 18:06 3seq_thread_0.out.txt
+-rw-r--r--   1 user  staff   189B 21 Nov 18:06 3seq_thread_1.out.txt
+-rw-r--r--   1 user  staff   189B 21 Nov 18:06 3seq_thread_2.out.txt
+-rw-r--r--   1 user  staff     0B 21 Nov 18:06 3seq_thread_3.out.txt
+```
+
+`3seq.acs` contains the ACS scores matrix (**details to add here**), whereas `3seq_thread_{j}.out.txt` depicts some time statistics for the j-th thread performing the D array computation (`generateSingleD( [i: sequence index])`) and the actual i-vs-all scores computation related to the i-th sequence.
+
+If `-f` is omitted, then we also have:
+
+```sh
+-rw-r--r--   1 user  staff    80B 21 Nov 18:19 3seq0.d_pairs
+-rw-r--r--   1 user  staff    24B 21 Nov 18:19 3seq0.lcp
+-rw-r--r--   1 user  staff    64B 21 Nov 18:19 3seq1.d_pairs
+-rw-r--r--   1 user  staff    24B 21 Nov 18:19 3seq1.lcp
+-rw-r--r--   1 user  staff    80B 21 Nov 18:19 3seq2.d_pairs
+-rw-r--r--   1 user  staff    24B 21 Nov 18:19 3seq2.lcp
+```
+
+`.d_pairs` and `.lcp` files for each ACS i-vs-all computation step.
+
+
+#### Options:
 
 ```sh
 Usage: [-h] [-v] [-d] [-E] [-f] [-Q BUFFER_SIZE] [-I input_format] target_collection
@@ -65,7 +107,7 @@ Usage: [-h] [-v] [-d] [-E] [-f] [-Q BUFFER_SIZE] [-I input_format] target_collec
     Q:  set BUFFER_SIZE (default 149488)
 
     I:  input format
-        - 0 BCR file format (LCP + DA)
+        - 0 BCR file format (LCP+DA)
         - 1 EGSA file format (LCP + DA + SA + BWT) (to be implemented)
 ```
 
@@ -75,7 +117,7 @@ The option `-d` skip the previously described .d computation step: the program e
 
 The option `-Q amount` dictates the amount of RAM (in Bytes) available to accomodate partial cLCP page. `amount` has to be at least 2 x _m_, where _m_ is the number of sequences in target collection.
 
-The option `-I input_format` specifies the format of the input to cLCP-mACS. Currently, only `-I0` option is implemented (default) corresponding to the BCR file format as computed by **???**.
+The option `-I input_format` specifies the format of the input to cLCP-mACS. Currently, only `-I0` option is implemented (default) corresponding to the BCR file format as computed by **???**. Specifically, `cLCP-mACS_parllel` expects to find `target_collection.lcpDA`, `target_collection.len` and `target_collection.info` files in the current directory (see Input, Output sections above).
 
 
 #### Citation

@@ -12,7 +12,7 @@ using namespace std;
 using namespace multi_acs;
 
 
-const char C_ApplicationName[]{"cLCP-mACS"};
+const char C_ApplicationName[]{"cLCP-mACS_parallel"};
 
 
 void printConfiguration(const MultiACSParameters params) {
@@ -62,12 +62,11 @@ void printParameters(const MultiACSParameters params) {
 
 
 void printUsage() {
-	cout << "Usage: [-h] [-v] [-d] [-E] [-f] [-Q BUFFER_SIZE] [-I input_format] target_collection\n\n";
+	cout << "Usage: [-h] [-v] [-d] [-f] [-Q BUFFER_SIZE] [-I input_format] target_collection\n\n";
 	cout << "\th:\thelp message\n\n";
 	cout << "\tv:\tverbose output\n\n";
 	//cout << "\tp:\tskip preprocessing step (file .info NEEDED containing alphabet size, number of sequence, number of letters)\n\n";
 	cout << "\td:\tskip D arrays generation step (files .d NEEDED)\n\n";
-    cout << "\tE:\tgenerate D Extended arrays\n\n";
 	cout << "\tf:\tdelete intermediate files {i}.d and {i}.lcp after computing i-vs-all\n\n";
     cout << "\tQ:\tset BUFFER_SIZE (default " << DEFAULT_BUFFER_SIZE << ")\n\n";
     cout << "\tI:\tinput format\n";
@@ -114,7 +113,7 @@ int main(int argc, char* argv[]) {
 				doDGeneration = false;
 				break;
             case 'E':
-                doGenerateExtendedD = true;
+                //doGenerateExtendedD = true;
                 break;
 			case 'f':
 				doFlushIntermediateFiles = true;
