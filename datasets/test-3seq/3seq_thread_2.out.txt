@@ -1,0 +1,2 @@
+thread=2: computing generateSingleD(2), seq_length=5 took: elapsed_time=0.000757, wall_clock_time=0
+thread=2: computing computeColumnScore(2) took: elapsed_time=0.000556, wall_clock_time=0
