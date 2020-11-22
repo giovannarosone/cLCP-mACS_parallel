@@ -4,7 +4,9 @@ Efficient parallel construction of the colored longest common prefix array intro
 >F. Garofalo, G. Rosone, M. Sciortino and D. Verzotto
 *The colored longest common prefix array computed via sequential scans.*
 Proceedings of String Processing and Information Retrieval - 25th International Symposium, SPIRE 2018, Lecture Notes in Computer Science, Springer <sup id="a1">[1](#f1)</sup>
+
 and in
+
 >F. Garofalo, D. Greco, G. Rosone, M. Sciortino
 *Parallel Computation of Matching Statistics and Average Common Substring.*
 BITS 2019 <sup id="a1">[1](#f1)</sup>
