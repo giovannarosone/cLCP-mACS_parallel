@@ -135,8 +135,17 @@ If you use cLCP-mACS or cLCP-mACS_parallel you could cite the following paper:
     publisher = {Springer}
     }
     
-**Daniele: penso che dovremmo aggiungere la conferenza in cui è stato presentato il lavoro ed il PDF della presentazione.**
-    
+and
+
+@inproceedings{CitekeyInproceedings,
+      author    = "Fabio Garofalo, Daniele Greco, Giovanna Rosone and Marinella Sciortino",
+      title     = "Parallel Computation of Matching Statistics and Average Common Substring",
+      booktitle = "Abstract of the BITS2019-Analysis of Big Omics Data Algorithms and Tools for the Analysis of Big Omics Data",
+      year      = 2019,
+      pages     = "",
+    }
+
+
 ---
 1. <small id="f1"> Supported by the project Italian MIUR-SIR CMACBioSeq ("_Combinatorial methods for analysis and compression of biological sequences_")
 grant n.~RBSI146R5L.</small> [↩](#a1)
