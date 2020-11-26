@@ -7,9 +7,9 @@ Proceedings of String Processing and Information Retrieval - 25th International 
 
 and in
 
->F. Garofalo, D. Greco, G. Rosone, M. Sciortino
+>Fabio Garofalo, Daniele Greco, Giovanna Rosone, Marinella Sciortino
 *Parallel Computation of Matching Statistics and Average Common Substring.*
-BITS 2019 <sup id="a1">[1](#f1)</sup>
+BITS2019-Analysis of Big Omics Data. Algorithms and Tools for the Analysis of Big Omics Data. 16th Annual Meeting of the Bioinformatics Italian Society. June 26-28, 2019, Palermo, Italy. Oral Presentation. Extended abstract. <sup id="a1">[1](#f1)</sup>
 
 Efficient lightweight strategy to solve the multi-string Average Common Substring (ACS) problem, that consists in the pairwise comparison of a single string against a collection of m strings simultaneously, in order to obtain m ACS induced distances.
 
